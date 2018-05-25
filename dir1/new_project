@@ -1,0 +1,35 @@
+Working on a Git Branch (Making Changes)
+So far, we have two git branches created: dev and qa.
+
+Let us go-ahead and work on qa branch. Modify a file and commit it to qa branch.
+
+In this example, we modified the contact.html file, and committing it to the qa branch
+
+$ git checkout qa
+
+$ vi contact.html
+
+$ git add contact.html
+
+$ git commit -m "Changed the contact info" 
+[qa fea5edd] Changed the contact info
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+When we did the commit, as shown in 1st line of the above output, it also shows which branch it is committing to along with the commit value.
+
+As we see from the git log, we have a new commit, and only qa branch is pointing there. dev branch is still in the previous commit. Our HEAD is pointing to qa branch, as that is where were are currently working.
+
+$ git log --oneline --decorate
+fea5edd (HEAD, qa) Changed the contact info
+37351a0 (master, dev) Fixed the bug for title display
+df27a49 Added question number
+b58503b (origin/master) initial commit
+7. View all Local git Branches
+The following command will display all available local git branches.
+
+$ git branch
+  dev
+  master
+* qa
+As we see from the above output, we currently have three branches. A star * in front of the branch name indicates that is our current working branch.
+
+When we use -v option along with git branch, it will display few additional information about the branch.
